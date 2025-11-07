@@ -44,12 +44,42 @@
     .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:9px;color:var(--muted);cursor:pointer}
     @media (max-width:900px){main{grid-template-columns:1fr} .hero-ctas{margin-left:0;margin-top:12px}}
   </style>
+  .profile-pic {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  margin-right: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.8);
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
+  50% { box-shadow: 0 0 25px rgba(79,70,229,1); }
+  100% { box-shadow: 0 0 10px rgba(79,70,229,0.6); }
+}
+
+.profile-pic {
+  animation: pulseGlow 4s infinite;
+}
+
+
 </head>
 <body>
   <div class="container">
     <header>
       <img src="rudra.jpg" alt="Rudra Tripathi" class="profile-pic" />
-      <div class="avatar">RT</div>
       <div>
         <h1>RUDRA TRIPATHI</h1>
         <div class="title-sub">AI/ML Engineering Student — Python, Java, DSA & Data Science</div>
