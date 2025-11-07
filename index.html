@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rudra Tripathi — AI/ML Engineering Student skilled in Python, Java, DSA & Data Science." />
+  <meta name="description" content="Rudra Tripathi — AI/ML Engineer Portfolio" />
   <title>Rudra Tripathi — AI/ML Engineer Portfolio</title>
 
   <style>
     :root {
       --bg: #0d1117;
       --card: #161b22;
-      --accent: #4f46e5;
+      --accent: #6366f1;
       --muted: #94a3b8;
       --text: #e2e8f0;
-      --glow: rgba(79, 70, 229, 0.6);
+      --glow: rgba(99, 102, 241, 0.6);
     }
 
     * {
@@ -36,28 +36,35 @@
     header {
       display: flex;
       align-items: center;
-      gap: 25px;
+      justify-content: space-between;
       background: var(--card);
       padding: 20px 30px;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
       margin-bottom: 30px;
+      width: 90%;
+      max-width: 950px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent);
       box-shadow: 0 0 25px var(--glow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: pulseGlow 4s infinite;
+      transition: transform 0.3s ease;
     }
 
     .profile-pic:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(79, 70, 229, 0.9);
     }
 
     @keyframes pulseGlow {
@@ -74,7 +81,41 @@
     header p {
       font-size: 14px;
       color: var(--muted);
-      margin-top: 4px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #818cf8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
     }
 
     /* MAIN CONTENT */
@@ -119,16 +160,65 @@
       font-size: 13px;
     }
 
+    /* CONTACT FORM */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      background: #0f172a;
+      color: var(--text);
+      border: 1px solid var(--muted);
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .contact-form button:hover {
+      background: #818cf8;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+
   </style>
 </head>
 <body>
 
   <!-- Header Section -->
   <header>
-    <img src="rudra.jpg" alt="Rudra Tripathi" class="profile-pic" />
-    <div>
-      <h1>RUDRA TRIPATHI</h1>
-      <p>AI/ML Engineering Student — Python, Java, DSA & Data Science</p>
+    <div class="header-left">
+      <img src="rudra.jpg" alt="Rudra Tripathi" class="profile-pic" />
+      <div>
+        <h1>RUDRA TRIPATHI</h1>
+        <p>AI/ML Engineering Student — Python, Java, DSA & Data Science</p>
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
     </div>
   </header>
 
@@ -152,15 +242,17 @@
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li>🧠 <b>NEURA - Virtual Assistant:</b> Voice-controlled AI assistant for web automation | <a href="#">GitHub</a></li>
-        <li>🚗 <b>Traffic Management System:</b> Object detection using YOLOv8 + Streamlit dashboard | <a href="#">GitHub</a></li>
-        <li>🚁 <b>Drone Surveillance System:</b> Real-time tracking with YOLOv8 + DeepSORT | <a href="#">GitHub</a></li>
-      </ul>
-    </section>
-
+    <section class="section" id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>🎮 <b>Snake-Water-Gun Game:</b> Simple Python-based logic game using numeric rules | <a href="#">GitHub</a></li>
+    <li>🌦️ <b>Weather Forecast Program:</b> Real-time global weather information app using APIs | <a href="#">GitHub</a></li>
+    <li>🧠 <b>NEURA - Virtual Assistant:</b> Voice-controlled AI assistant for web automation | <a href="#">GitHub</a></li>
+    <li>🚗 <b>Traffic Management System:</b> Object detection for vehicles using YOLOv8 + Streamlit dashboard | <a href="#">GitHub</a></li>
+    <li>🚁 <b>Drone Surveillance System:</b> Real-time drone-based tracking using YOLOv8 + DeepSORT | <a href="#">GitHub</a></li>
+  </ul>
+</section>
+    
     <section class="section">
       <h2>Internship</h2>
       <p><b>NIELIT — AI/ML using Python (45 Days)</b><br>
@@ -172,6 +264,13 @@
       <p><b>Email:</b> rudratripathi3773@gmail.com</p>
       <p><b>GitHub:</b> <a href="https://github.com/Rudra3773" target="_blank">Rudra3773</a></p>
       <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/rudra-tripathi" target="_blank">rudra-tripathi</a></p>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
     </section>
   </main>
 
